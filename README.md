@@ -62,6 +62,7 @@ db.Books.insertMany([
   { _id: 10, title: "The Hobbit", author_id: 10, genres: ["Fantasy"], published_year: 1937, available: true }
 ]);
 ```
+![Multiple Documents](assets/images/multiple_documents.png)
 
 #### b. `Authors` Collection
 Insert data into the `Authors` collection:
@@ -79,6 +80,7 @@ db.Authors.insertMany([
   { _id: 10, name: "J.R.R. Tolkien", nationality: "British", birth_year: 1892, death_year: 1973 }
 ]);
 ```
+![Authors](assets/images/author.png)
 
 #### c. `Patrons` Collection
 Insert data into the `Patrons` collection:
@@ -96,7 +98,7 @@ db.Patrons.insertMany([
   { _id: 10, name: "Jack Anderson", email: "jack@example.com", borrowed_books: [7, 8] }
 ]);
 ```
-
+![Patrons](assets/images/Patrons.png)
 ---
 
 ## CRUD Operations
@@ -106,6 +108,8 @@ db.Patrons.insertMany([
    ```javascript
    db.Books.find().pretty();
    ```
+![Find](assets/images/find.png)
+
 2. Find a specific book by title:
    ```javascript
    db.Books.find({ title: "To Kill a Mockingbird" }).pretty();
@@ -124,6 +128,8 @@ db.Patrons.insertMany([
    ```javascript
    db.Books.updateOne({ _id: 3 }, { $set: { available: false } });
    ```
+   ![Crud](assets/images/crud.png)
+
 2. Add a genre to a book:
    ```javascript
    db.Books.updateOne({ _id: 8 }, { $addToSet: { genres: "Classic" } });
@@ -142,6 +148,8 @@ db.Patrons.insertMany([
    ```javascript
    db.Authors.deleteOne({ _id: 3 });
    ```
+
+![Delete](assets/images/delete.png)
 
 ---
 
